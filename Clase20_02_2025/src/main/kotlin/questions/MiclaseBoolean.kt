@@ -1,9 +1,12 @@
 package questions
 
-class MiClaseBoolean(val estado: Boolean) {
-    fun mostrarEstado() {
-        if (estado== true) {
+class MiClaseBoolean() {
+
+    fun mostrarEstado(confirmacion: String) {
+        if (confirmacion== "SI") {
             println("Gracias por confirmar el pago.");
+        }else {
+            println("Lo sentimos , en un momento se solucionara el problema");
         }
     }
 }
