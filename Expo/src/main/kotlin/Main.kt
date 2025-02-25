@@ -72,32 +72,9 @@ fun main() {
         println("Estudiante ${nombre + 1}: ${estudiantes[nombre]}")
     }
 
-    //5. Evitar ciclos infinitos
-    println()
-    println("------------------------------------------------")
-    println()
 
-//    var contador = 0
-//
-//    while (contador < 10) { // Falta incrementar el contador
-//        println("Contador: $contador")
-//        // ¡Ciclo infinito! El contador nunca cambia.
-//    }
-//
-//    for (i in 0..10) { // Este ciclo no es infinito, pero si no se controla "i", podría causar problemas
-//        println("Valor de i: $i")
-//        // Si modificamos "i" dentro del ciclo, podríamos crear un comportamiento inesperado
-//        if (i == 5) {
-//            // i = 0 Esto causaría un ciclo infinito si Kotlin permitiera modificar "i"
-//        }
-//    }
-//
-//    for (i in 0..10) { // Rango bien definido (0 a 10)
-//        println("Valor de i: $i")
-//        // No se modifica "i" dentro del ciclo
-//    }
 
-    //6. Usar ciclos for con iterables
+    //5. Usar ciclos for con iterables
     println()
     println("6. ------------------------------------------------")
     println()
@@ -114,7 +91,7 @@ fun main() {
         println("Número: $numero")
     }
 
-    //7. Evitar anidar ciclos innecesariamente
+    //6. Evitar anidar ciclos innecesariamente
     println()
     println("7. ------------------------------------------------")
     println()
@@ -138,6 +115,17 @@ fun main() {
             println("Elemento: $elemento")
         }
     }
+
+
+//    println("------------------------------------------------")
+//
+//    //Ejemplo Proyecto
+//    val nombres = listOf("Ana", "Juan", "Pedro", "María")
+//
+//    // Usando forEach
+//    nombres.forEach { nombre ->
+//        println(nombre)
+//    }
 
 
 }

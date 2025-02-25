@@ -1,6 +1,7 @@
 package ejercicios
 
-import clases.Estudiante2
+import clases.*
+import kotlin.math.roundToInt
 
 class Ejercicios {
     companion object{
@@ -127,16 +128,32 @@ class Ejercicios {
             }
         }
 
+        fun inicializarEstudiante(){
+            Estudiante("Andres",25)
+        }
+
         fun usoFun(num1: Double, num2: Double): Double{
 
             return num1*num2
 
         }
 
+        fun usoFun2(){
+            println("Ingrese 2 numeros para realizar el producto:")
+            println("Numero 1:")
+            val num1 = readln().toDouble()
+
+            println("Numero 2:")
+            val num2 = readln().toDouble()
+
+            val producto = usoFun(num1,num2)
+            println("El producto de los numeros $num1 y $num2 es: $producto")
+        }
+
         fun conversion(){
             println("Ingrese un numero decimal:")
             val num = readln().toFloat()
-            val int = num.toInt()
+            val int = num.roundToInt()
 
             println("Al convertir el numero decimal $num a entero obtenemos $int")
 
@@ -154,6 +171,30 @@ class Ejercicios {
 
         }
 
+//        fun manejarCuenta() {
+//            val cuenta = cuenta1
+//            println("El saldo de su cuenta es ${cuenta.saldo}")
+//            println("¿Cuánto desea retirar?")
+//            val retiro = readln().toDouble()
+//            if (retiro > cuenta.saldo) {
+//                println("Su retiro no puede exceder el saldo de la cuenta")
+//            } else {
+//                cuenta.retiro(retiro)
+//            }
+//        }
+
+        fun manejarCuenta(){
+            val cuenta = CuentaBancaria.cuenta1
+            println("El saldo de su cuenta es ${cuenta.saldo}")
+            println("Cuando desea retirar?")
+            val retiro= readln().toDouble()
+            if (retiro>cuenta.saldo){
+                println("Su retiro no puede exeder el saldo de la cuenta")
+            }else{
+                CuentaBancaria.retiro(retiro,cuenta)
+            }
+        }
+
         fun listaMut(){
             val nombres = mutableListOf("Pedro","Pepe","Andres","Carlos")
             println("Nombres iniciales")
@@ -162,6 +203,22 @@ class Ejercicios {
             println("Nombres despues de agregar Andrea")
             nombres.add("Andrea")
             nombres.forEach { println("Nombre: $it") }
+        }
+
+        fun cambiarPlaca(){
+
+            val carro = Carro("HJY123")
+            println("Placa actual: ${carro.getPlaca()}")
+
+            carro.setPlaca("LKT789")
+            println("Placa nueva: ${carro.getPlaca()}")
+        }
+
+        fun sonidoAnimal(){
+
+            val picher = Perro()
+            picher.hacerSonido()
+
         }
 
         //Nivel 5
@@ -194,11 +251,41 @@ class Ejercicios {
             estudiantesFiltrados.forEach { println(it) }
         }
 
+        fun probarLambda(){
+
+            operacionMat(10, 3) { x, y ->
+                x + y
+            }
+
+            operacionMat(10, 3) { x, y ->
+                x * y
+            }
+
+            operacionMat(10, 3) { x, y ->
+                x - y
+            }
+
+            operacionMat(10, 3) { x, y ->
+                x / y
+            }
+        }
+
         fun operacionMat(a: Int, b: Int, operacion: (Int, Int) -> Int) {
 
             println("Recibir una lambda")
             val resultado = operacion(a, b)
             println("El resultado de la operación es: $resultado")
+        }
+
+        fun crearLibro(){
+
+            val libro = Libro("100 años de soledad","Gabriel García Márquez",1967)
+
+            println("Libro:")
+            println("Titulo: ${libro.titulo}")
+            println("Autor: ${libro.autor}")
+            println("Año de publicacion: ${libro.añoPublicacion}")
+
         }
 
 

@@ -1,12 +1,11 @@
 import ejercicios.Ejercicios
-import clases.*
+
 
 fun main() {
 
     println("Nivel 1")
     println("-----------------------------------------")
     println()
-
 
     //1. Imprime un mensaje simple en la consola, como "¡Hola, Kotlin!".
 
@@ -116,7 +115,7 @@ fun main() {
     //13. Crea una clase Estudiante que tenga nombre y edad. Usa el bloque init
     //para inicializar esos valores y mostrar un mensaje.
 
-    Estudiante("Andres",25)
+    Ejercicios.inicializarEstudiante()
 
     println()
     println("-----------------------------------------")
@@ -125,15 +124,7 @@ fun main() {
     //14. Crea una función que reciba dos números como parámetros y retorne su
     //producto. Luego invoca la función en el main.
 
-    println("Ingrese 2 numeros para realizar el producto:")
-    println("Numero 1:")
-    val num1 = readln().toDouble()
-
-    println("Numero 2:")
-    val num2 = readln().toDouble()
-
-    val producto = Ejercicios.usoFun(num1,num2)
-    println("El producto de los numeros $num1 y $num2 es: $producto")
+    Ejercicios.usoFun2()
 
     println()
     println("-----------------------------------------")
@@ -163,15 +154,7 @@ fun main() {
     //17. Crea una clase CuentaBancaria con propiedades como saldo y titular.
     //Añade un metodo que modifique el saldo, restando un monto.
 
-    val cuenta = CuentaBancaria.cuenta1
-    println("El saldo de su cuenta es ${cuenta.saldo}")
-    println("Cuando desea retirar?")
-    val retiro= readln().toDouble()
-    if (retiro>cuenta.saldo){
-        println("Su retiro no puede exeder el saldo de la cuenta")
-    }else{
-        CuentaBancaria.retiro(retiro,cuenta)
-    }
+    Ejercicios.manejarCuenta()
 
     println()
     println("-----------------------------------------")
@@ -189,11 +172,7 @@ fun main() {
     //19. Crea una clase con una propiedad privada y usa un getter y setter
     //personalizados para obtener y establecer el valor de la propiedad.
 
-    val carro = Carro("HJY123")
-    println("Placa actual: ${carro.getPlaca()}")
-
-    carro.setPlaca("LKT789")
-    println("Placa nueva: ${carro.getPlaca()}")
+    Ejercicios.cambiarPlaca()
 
     println()
     println("-----------------------------------------")
@@ -203,9 +182,7 @@ fun main() {
     //crea una clase derivada Perro que sobrescriba este metodo para imprimir
     //"Guau!".
 
-    val picher = Perro()
-
-    picher.hacerSonido()
+    Ejercicios.sonidoAnimal()
 
     println()
     println("-----------------------------------------")
@@ -237,21 +214,7 @@ fun main() {
     //23. Crea una función que reciba otra función como parámetro y la ejecute
     //dentro de la función principal. Luego, pásale una función lambda.
 
-    Ejercicios.operacionMat(10, 3) { x, y ->
-        x + y
-    }
-
-    Ejercicios.operacionMat(10, 3) { x, y ->
-        x * y
-    }
-
-    Ejercicios.operacionMat(10, 3) { x, y ->
-        x - y
-    }
-
-    Ejercicios.operacionMat(10, 3) { x, y ->
-        x / y
-    }
+    Ejercicios.probarLambda()
 
     println()
     println("-----------------------------------------")
@@ -261,12 +224,6 @@ fun main() {
     //título, autor y año de publicación. Luego, crea una instancia y muestra sus
     //propiedades.
 
-    val libro = Libro("100 años de soledad","Gabriel García Márquez",1967)
-
-    println("Libro:")
-    println("Titulo: ${libro.titulo}")
-    println("Autor: ${libro.autor}")
-    println("Año de publicacion: ${libro.añoPublicacion}")
-
+    Ejercicios.crearLibro()
 
 }
