@@ -1,11 +1,12 @@
+package clases
 
-class Estudiante(
+class Estudiante2(
     val nombre: String,
-    val edad: Int
+    val edad: Int,
+    val promedio: Float
 ){
-    init {
-        println("El nombre es ${nombre}")
-        println("La Edad es ${edad}")
+    override fun toString(): String {
+        return "Estudiante(nombre='$nombre', edad=$edad, promedio=$promedio)"
     }
 
 }

@@ -1,9 +1,12 @@
 package clases
 
-class Estudiante2(
+class Estudiante(
     val nombre: String,
-    val edad: Int,
-    val promedio: Float
+    val edad: Int
 ){
+    init {
+        println("El nombre es $nombre")
+        println("La Edad es $edad")
+    }
 
 }
