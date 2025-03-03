@@ -6,6 +6,7 @@ fun main() {
     println()
 
     val lista = listOf(1, 2, 3, 4, 5)
+    println(lista[1])
 
     for (element in lista) { // Se calcula lista.size en cada iteración
         println(element)
@@ -101,6 +102,7 @@ fun main() {
         listOf(4, 5, 6),
         listOf(7, 8, 9)
     )
+
 
     for (i in matriz.indices) {
         for (j in matriz[i].indices) { // Ciclo anidado innecesario

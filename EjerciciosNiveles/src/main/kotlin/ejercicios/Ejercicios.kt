@@ -1,6 +1,7 @@
 package ejercicios
 
 import clases.*
+import java.util.*
 import kotlin.math.roundToInt
 
 class Ejercicios {
@@ -132,22 +133,71 @@ class Ejercicios {
             Estudiante("Andres",25)
         }
 
-        fun usoFun(num1: Double, num2: Double): Double{
+        fun multiplicacion(num1: Double, num2: Double): Double{
 
             return num1*num2
 
         }
 
+        fun division(num1: Double, num2: Double): Double{
+
+            return num1/num2
+
+        }
+
+        fun suma(num1: Double, num2: Double): Double{
+
+            return num1+num2
+
+        }
+
+        fun resta(num1: Double, num2: Double): Double{
+
+            return num1-num2
+
+        }
+
+
         fun usoFun2(){
-            println("Ingrese 2 numeros para realizar el producto:")
-            println("Numero 1:")
-            val num1 = readln().toDouble()
+            do {
+                println("----------------------------")
+                println("Que operacion desea realizar?:")
+                println("1. Mutiplicar")
+                println("2. Dividir")
+                println("3. Sumar")
+                println("4. Restar")
+                println("5. Salir")
 
-            println("Numero 2:")
-            val num2 = readln().toDouble()
+                println("Ingrese 2 numeros:")
+                println("Numero 1:")
+                val num1 = readln().toDouble()
 
-            val producto = usoFun(num1,num2)
-            println("El producto de los numeros $num1 y $num2 es: $producto")
+                println("Numero 2:")
+                val num2 = readln().toDouble()
+
+                val opcion = readln().toInt()
+                when {
+                    opcion == 1 ->{
+                        val producto = multiplicacion(num1,num2)
+                        println("El producto de los numeros $num1 y $num2 es: $producto")
+                    }
+                    opcion == 2-> {
+                        val division = division(num1,num2)
+                        println("La division de los numeros $num1 y $num2 es: $division")
+                    }
+                    opcion == 3-> {
+                        val suma = suma(num1,num2)
+                        println("La suma de los numeros $num1 y $num2 es: $suma")
+                    }
+                    opcion == 4-> {
+                        val resta = division(num1,num2)
+                        println("La resta de los numeros $num1 y $num2 es: $resta")
+                    }
+                    else -> println("Gracias por usar el programa")
+                }
+
+            }while (opcion != 5)
+
         }
 
         fun conversion(){
@@ -196,12 +246,38 @@ class Ejercicios {
         }
 
         fun listaMut(){
-            val nombres = mutableListOf("Pedro","Pepe","Andres","Carlos")
-            println("Nombres iniciales")
-            nombres.forEach { println("Nombre: $it") }
+            var nombres : MutableList<String> = mutableListOf()
+            var cantidad = 0
+            var iteracion = 3
+
+            println("Igrese 3 nombres para llenar la lista:")
+            val nombre1 = readln().uppercase()
+            nombres.add(nombre1)
+            println("Igrese 3 nombres para llenar la lista:")
+            val nombre2 = readln().uppercase()
+            nombres.add(nombre2)
+            println("Igrese 3 nombres para llenar la lista:")
+            val nombre3 = readln().uppercase()
+            nombres.add(nombre3)
+            do {
+                println("Igrese 3 nombres para llenar la lista:")
+                val nombre = readln().uppercase()
+                nombres.add(nombre)
+                cantidad++
+
+            } while (cantidad < 3)
+
+            for (nombre in 1..iteracion ){
+                println("Igrese otros 3 nombres para llenar la lista:")
+                val nom = readln().uppercase()
+                nombres.add(nom)
+            }
+
+            println("Nombres inicialmente ingresados")
+            println(nombres)
             println("------")
             println("Nombres despues de agregar Andrea")
-            nombres.add("Andrea")
+            nombres.add("ANDREA")
             nombres.forEach { println("Nombre: $it") }
         }
 
