@@ -26,7 +26,7 @@ class Servicios {
         println("Producto creado exitosamente.")
     }
 
-    fun listarProductos(productos: List<Producto>) {
+    fun listarProductos() {
         if (productos.isEmpty()) {
             println("No hay ningún producto registrado.")
         } else {
@@ -69,7 +69,7 @@ class Servicios {
         println("Ingrese el ID del producto que desea eliminar:")
         val id = readln().uppercase()
 
-        val producto = productos.find { it.id == id }
+        val producto = productos.find { it.getId() == id }
         if (producto != null) {
             productos.remove(producto)
             println("Producto eliminado exitosamente.")
