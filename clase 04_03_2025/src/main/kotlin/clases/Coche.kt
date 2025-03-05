@@ -1,7 +1,7 @@
 package clases
 import kotlin.system.exitProcess
 
-class Coche(val placa: String, val tipo: String, marca: String, modelo: String) : Vehiculo(marca, modelo) {
+class Coche(private val placa: String, tipo: String, marca: String, modelo: String) : Vehiculo(marca, modelo, tipo) {
 
     companion object {
         val deportivo = Coche("ABC123", "DEPORTIVO", "MERCEDES", "2015")
@@ -23,7 +23,7 @@ class Coche(val placa: String, val tipo: String, marca: String, modelo: String) 
 
     override fun acelerar(tipo: String) {
         var apagar = 0
-        var marcha = 0
+        var marchaActual = 0
 
         val velocidadBase = when (tipo.uppercase()) {
             "DEPORTIVO" -> 30
@@ -34,24 +34,20 @@ class Coche(val placa: String, val tipo: String, marca: String, modelo: String) 
 
         do {
             println("¿Qué cambio desea aplicar?")
-            println("1. Primera")
-            println("2. Segunda")
-            println("3. Tercera")
-            println("4. Cuarta")
-            println("5. Quinta")
+            println("1-5")
             println("6. Reversa")
             println("7. Frenar")
 
             when (readln().toInt()) {
-                1 -> cambiarMarcha(1, marcha, velocidadBase * 1).also { marcha = it }
-                2 -> cambiarMarcha(2, marcha, velocidadBase * 2).also { marcha = it }
-                3 -> cambiarMarcha(3, marcha, velocidadBase * 3).also { marcha = it }
-                4 -> cambiarMarcha(4, marcha, velocidadBase * 4).also { marcha = it }
-                5 -> cambiarMarcha(5, marcha, velocidadBase * 5).also { marcha = it }
+                1 -> cambiarMarcha(1, marchaActual, velocidadBase * 1).also { marchaActual = it }
+                2 -> cambiarMarcha(2, marchaActual, velocidadBase * 2).also { marchaActual = it }
+                3 -> cambiarMarcha(3, marchaActual, velocidadBase * 3).also { marchaActual = it }
+                4 -> cambiarMarcha(4, marchaActual, velocidadBase * 4).also { marchaActual = it }
+                5 -> cambiarMarcha(5, marchaActual, velocidadBase * 5).also { marchaActual = it }
                 6 -> {
-                    if (marcha == 0) println("La velocidad es ${velocidadBase * 1} km/h en reversa")
+                    if (marchaActual == 0) println("La velocidad es ${velocidadBase * 1} km/h en reversa")
                     else apagarVehiculo()
-                    marcha = 0
+                    marchaActual = 0
                 }
                 7 -> {
                     detener()

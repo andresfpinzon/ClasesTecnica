@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Clase20_02_2025/Clase20_02_2025.iml" filepath="$PROJECT_DIR$/Clase20_02_2025/Clase20_02_2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ClasesTecnica.iml" filepath="$PROJECT_DIR$/.idea/ClasesTecnica.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EjerciciosNiveles/EjerciciosNiveles.iml" filepath="$PROJECT_DIR$/EjerciciosNiveles/EjerciciosNiveles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Inventario/Inventario.iml" filepath="$PROJECT_DIR$/Inventario/Inventario.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clase 04_03_2025/clase 04_03_2025.iml" filepath="$PROJECT_DIR$/clase 04_03_2025/clase 04_03_2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clase28_02_2025/clase28_02_2025.iml" filepath="$PROJECT_DIR$/clase28_02_2025/clase28_02_2025.iml" />
+    </modules>
+  </component>
+</project>
