@@ -1,44 +1,42 @@
-import clases.Coche
+import clases.*
+import clases.Vehiculo
 
-fun accionesVehiculo(coche: Coche, tipo: String) {
-    println("¿Desea encender el auto?")
+
+fun accionesVehiculo(vehiculo: Vehiculo, tipo: String) {
+    println("¿Desea comenzar a usar el vehículo?")
     println("1. Sí")
     println("2. No")
-    val encender = readln().toInt()
-
-    when (encender) {
+    when (readln().toInt()) {
         1 -> {
-            coche.arrancar()
+            vehiculo.arrancar()
             println("-----------------------------------")
-            coche.acelerar(tipo)
+            vehiculo.acelerar(tipo)
         }
-        2 -> println("El coche permanece apagado.")
+        2 -> println("El vehículo permanece sin usar.")
         else -> println("Opción no válida.")
     }
 }
 
 fun main() {
-    var tipo: String = ""
+    val vehiculos = listOf(
+        Coche.deportivo to "DEPORTIVO",
+        Coche.comercial to "COMERCIAL",
+        Coche.caminoneta to "CAMIONETA",
+        Bicicleta.montaña to "MONTAÑA",
+        Bicicleta.carrera to "CARRERA"
+    )
 
-    var vehiculos : MutableList<Coche> = mutableListOf(Coche.deportivo,Coche.comercial, Coche.caminoneta)
-
-    vehiculos.forEachIndexed { index, vehiculo ->
-        println("${index + 1}. COCHE ${vehiculo.placa} ${vehiculo.tipo} ${vehiculo.marca} ${vehiculo.modelo}")
-    }
-    println()
-    println("Que coche desea elegir?")
-    var coche = readln().toInt()
-
-    when {
-        coche == 1 -> tipo = "DEPORTIVO"
-        coche == 2 -> tipo = "COMERCIAL"
-        coche == 3 -> tipo = "CAMIONETA"
-        else -> println("Opcion no valida ")
+    vehiculos.forEachIndexed { index, (vehiculo, tipo) ->
+        println("${index + 1}. ${vehiculo::class.simpleName?.uppercase()} ${vehiculo.marca} ${vehiculo.modelo} ($tipo)")
     }
 
-    if (tipo.isNotEmpty()) {
-        accionesVehiculo(vehiculos[coche - 1], tipo)
+    println("¿Qué vehículo desea elegir?")
+    val opcion = readln().toInt()
+
+    if (opcion in 1..vehiculos.size) {
+        val (vehiculo, tipo) = vehiculos[opcion - 1]
+        accionesVehiculo(vehiculo, tipo)
+    } else {
+        println("Opción no válida.")
     }
-
-
 }
